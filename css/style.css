@@ -49,6 +49,22 @@ i {
   font-size: 23px;
   color: #b5b0b0;
 }
+li {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 90px;
+  padding: 10px;
+  border-bottom: 1px solid #b5b0b0;
+}
+li.active {
+  background-color: #ebe9ec;
+}
+h4 {
+  font-size: 20px;
+  font-weight: 500;
+}
 /* /generale */
 
 /* main */
@@ -146,6 +162,28 @@ main::after {
 }
 .form > input:focus {
   outline: none;
+}
+.contact {
+  height: calc(100% - 190px);
+  overflow-y: auto;
+}
+#contact_list li > img {
+  width: 60px;
+  margin-right: 20px;
+}
+#contact_list li .contact_text {
+  align-self: flex-start;
+}
+#contact_list li p {
+  font-size: 15px;
+  color: #9a9898;
+}
+.date_message {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 15px;
+  color: #9a9898;
 }
 /* /contact block */
 /* chat block */

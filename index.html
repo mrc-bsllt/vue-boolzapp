@@ -48,7 +48,19 @@
             <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
           </div>
 
-          <div class="contact"></div>
+          <div class="contact">
+            <ul id="contact_list">
+              <li v-for= "contact in contacts">
+                <img :src="contact.avatar" alt="avatar 1">
+                <div class="contact_text">
+                  <h4>{{contact.name}}</h4>
+                  <p>sfdsfdsfssdfsd</p>
+                </div>
+                <p class="date_message">asdadsadasdsaadadasdsd</p>
+              </li>
+            </ul>
+          </div>
+
         </aside>
 
         <div class="" id="chat_block">
