@@ -217,6 +217,12 @@ main::after {
 #contact_list li .contact_text {
   align-self: flex-start;
 }
+.contact_text > p {
+  width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 .date_message {
   position: absolute;
   top: 5px;

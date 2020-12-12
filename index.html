@@ -56,9 +56,13 @@
                 <img :src="contact.avatar" alt="avatar 1">
                 <div class="contact_text">
                   <h4>{{contact.name}}</h4>
-                  <p>{{sfdsfdsfssdfsd}}</p>
+                  <p>
+                    {{contact.messages[contact.messages.length-1].text}}
+                  </p>
                 </div>
-                <p class="date_message">asdadsadasdsaadadasdsd</p>
+                <p class="date_message">
+                  {{contact.messages[contact.messages.length-1].date}}
+                </p>
               </li>
             </ul>
           </div>
@@ -86,11 +90,11 @@
             <div
             v-for="key in contacts[activeIndex].messages"
             class="message">
-            <div :class="key.status == 'sent' ? 'sent' : 'received'">
-              <p class="message_text">{{key.text}}</p>
-              <p class="date_text">{{key.date}}</p>
+              <div :class="key.status == 'sent' ? 'sent' : 'received'">
+                <p class="message_text">{{key.text}}</p>
+                <p class="date_text">{{key.date}}</p>
+              </div>
             </div>
-          </div>
           </div>
 
           <footer>
