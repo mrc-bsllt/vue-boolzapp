@@ -88,9 +88,12 @@ const app = new Vue(
 					],
 				},
 			],
+			activeIndex: -1
 		},
 		methods: {
-
+			addActiveClass: function (index) {
+				this.activeIndex = index;
+			}
 		}
 
 	}

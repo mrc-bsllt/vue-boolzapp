@@ -57,6 +57,7 @@ li {
   height: 90px;
   padding: 10px;
   border-bottom: 1px solid #b5b0b0;
+  cursor: pointer;
 }
 li.active {
   background-color: #ebe9ec;
