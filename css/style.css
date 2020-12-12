@@ -183,7 +183,7 @@ main::after {
   align-items: center;
   height: 50px;
   padding: 10px;
-  background-color: #ebe9ec;
+  background-color: #faf9fb;
 }
 .form > button,
 .form > input {
@@ -241,6 +241,7 @@ main::after {
 }
 #chat_block header {
   display: flex;
+  justify-content: flex-end;
 }
 #chat_block header > .contact_info{
   display: flex;
