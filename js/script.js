@@ -93,16 +93,20 @@ const app = new Vue(
 				},
 			],
 			activeIndex: 0,
+			userInputMessage: ""
 		},
 		methods: {
 			addActiveClass: function (index) {
 				this.contacts.forEach(
-					(element) => {
+					(element, i) => {
 						element.visible = false;
 					}
 				);
 				this.activeIndex = index;
 				this.contacts[index].visible = true;
+			},
+			saluta: function() {
+				console.log("ciao");
 			}
 		}
 

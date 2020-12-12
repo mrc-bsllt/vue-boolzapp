@@ -116,9 +116,15 @@
             <div class="footer_icons">
               <i class="far fa-smile"></i>
             </div>
-            
+
             <div class="send_input">
-              <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+              <input
+              type="text"
+              name=""
+              value=""
+              v-model="userInputMessage"
+              v-on:keydown.enter="saluta()"
+              placeholder="Scrivi un messaggio">
             </div>
 
             <div class="footer_icons">
