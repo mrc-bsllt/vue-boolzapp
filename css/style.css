@@ -59,6 +59,9 @@ li {
   border-bottom: 1px solid #b5b0b0;
   cursor: pointer;
 }
+li:hover {
+  background-color: #ebe9ec;
+}
 li.active {
   background-color: #ebe9ec;
 }
