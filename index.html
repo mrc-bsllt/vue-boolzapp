@@ -83,14 +83,12 @@
           </header>
 
           <div class="chat_field">
-            <template>
-              <div class="message">
-                <div class="sent">
-                  <p class="message_text">Hai portato a spasso il cane?</p>
-                  <p class="date_text">adadsassadadasdsdsad</p>
-                </div>
+            <div v-for="(contact,index) in contacts" class="message">
+              <div class="sent">
+                <p class="message_text">Hai portato a spasso il cane?</p>
+                <p class="date_text">adadsassadadasdsdsad</p>
               </div>
-            </template>
+            </div>
           </div>
 
           <footer>

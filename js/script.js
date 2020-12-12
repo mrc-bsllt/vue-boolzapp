@@ -88,7 +88,8 @@ const app = new Vue(
 					],
 				},
 			],
-			activeIndex: -1
+			activeIndex: -1,
+			userArrayText: [""]
 		},
 		methods: {
 			addActiveClass: function (index) {
