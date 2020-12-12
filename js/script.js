@@ -7,7 +7,7 @@ const app = new Vue(
 				{
 					name: 'Snoop',
 					avatar: 'img/avatar_1.jpg',
-					visible: true,
+					visible: false,
 					messages: [
 						{
 							date: '10/01/2020 15:30:55',
@@ -29,7 +29,7 @@ const app = new Vue(
 				{
 					name: 'Billy',
 					avatar: 'img/avatar_2.jpg',
-					visible: true,
+					visible: false,
 					messages: [
 						{
 							date: '20/03/2020 16:30:00',
@@ -51,7 +51,7 @@ const app = new Vue(
 				{
 					name: 'Chuck',
 					avatar: 'img/avatar_3.jpg',
-					visible: true,
+					visible: false,
 					messages: [
 						{
 							date: '28/03/2020 10:10:40',
@@ -73,7 +73,7 @@ const app = new Vue(
 				{
 					name: 'Emily',
 					avatar: 'img/avatar_4.jpg',
-					visible: true,
+					visible: false,
 					messages: [
 						{
 							date: '10/01/2020 15:30:55',
@@ -93,6 +93,7 @@ const app = new Vue(
 		methods: {
 			addActiveClass: function (index) {
 				this.activeIndex = index;
+				this.contacts[index].visible = true;
 			}
 		}
 

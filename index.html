@@ -51,7 +51,7 @@
           <div class="contact">
             <ul id="contact_list">
               <li
-              v-for= "(contact, index) in contacts" @click="addActiveClass(index)" 
+              v-for= "(contact, index) in contacts" @click="addActiveClass(index)"
               :class="activeIndex == index ? 'active' : ''">
                 <img :src="contact.avatar" alt="avatar 1">
                 <div class="contact_text">
@@ -83,12 +83,14 @@
           </header>
 
           <div class="chat_field">
-            <div class="message">
-              <div class="sent">
-                <p class="message_text">Hai portato a spasso il cane?</p>
-                <p class="date_text">adadsassadadasdsdsad</p>
+            <template>
+              <div class="message">
+                <div class="sent">
+                  <p class="message_text">Hai portato a spasso il cane?</p>
+                  <p class="date_text">adadsassadadasdsdsad</p>
+                </div>
               </div>
-            </div>
+            </template>
           </div>
 
           <footer>
