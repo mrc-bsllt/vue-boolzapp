@@ -14,7 +14,7 @@
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: #cccccc;
+  background-color: #000000;
 }
 #wrapper::before {
   content: "";
@@ -23,7 +23,7 @@
   left: 0;
   width: 100%;
   height: 120px;
-  background-color: #1b674e;
+  background-color: #1e4242;
 }
 /* /wrapper */
 
@@ -51,12 +51,12 @@ i {
   transition: all 0.2s ease-in;
 }
 header i:hover {
-  color: #4a3e3e;
+  color: #ffffff;
   transform: scale(1.2);
 }
 footer i:hover {
   transform: rotate(360deg);
-  color: #4a3e3e;
+  color: #ffffff;
   transition: 0.8s;
 }
 li {
@@ -81,7 +81,6 @@ h4 {
 }
 p {
   font-size: 15px;
-  /* color: #9a9898; */
 }
 input:focus {
   outline: none;
@@ -108,11 +107,10 @@ input:focus {
 }
 .message > .sent {
   float: right;
-  background-color: #b9f3b9;
+  background-color: #1e4242;
 }
 p.message_text {
   padding: 10px;
-  /* color: #000000; */
   font-weight: 500;
 }
 p.date_text {
@@ -121,7 +119,6 @@ p.date_text {
   right: 10px;
   word-wrap: break-word;
   font-size: 13px;
-  /* color: #9a9898; */
 }
 /* /generale */
 
@@ -129,7 +126,7 @@ p.date_text {
 main {
   width: 80%;
   height: 95vh;
-  background-color: #121217;
+  background-color: #19161b;
   z-index: 1;
 }
 main::after {
@@ -165,7 +162,7 @@ main::after {
   align-items: center;
   height: 80px;
   padding: 10px;
-  background-color: #79deff;
+  background-color: #006586;
 }
 .notify_icon {
   display: flex;
@@ -178,7 +175,7 @@ main::after {
   border-radius: 50%;
 }
 .notify_icon > i {
-  color: #79deff;
+  color: #006586;
 }
 .notify_text > p {
   color: #000000;
@@ -196,7 +193,7 @@ main::after {
   align-items: center;
   height: 50px;
   padding: 10px;
-  background-color: #faf9fb;
+  background-color: #19161b;
 }
 .form > button,
 .form > input {
@@ -206,7 +203,6 @@ main::after {
 }
 .form > button {
   width: 15%;
-  border-right: 1px solid lightgrey;
   border-radius: 50px 0 0 50px;
   cursor: pointer;
 }
@@ -241,7 +237,6 @@ main::after {
   top: 5px;
   right: 10px;
   font-size: 15px;
-  /* color: #9a9898; */
 }
 /* /contact block */
 /* chat block */
@@ -288,7 +283,7 @@ main::after {
   display: flex;
   width: 100%;
   height: 60px;
-  background-color: #e8e2e2;
+  background-color: #1a191b;
 }
 .footer_icons {
   display: flex;
