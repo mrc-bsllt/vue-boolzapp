@@ -93,7 +93,8 @@ const app = new Vue(
 				},
 			],
 			activeIndex: 0,
-			userInputMessage: ""
+			userInputMessage: "",
+			newMessage: {}
 		},
 		methods: {
 			addActiveClass: function (index) {
@@ -105,8 +106,13 @@ const app = new Vue(
 				this.activeIndex = index;
 				this.contacts[index].visible = true;
 			},
-			saluta: function() {
-				console.log("ciao");
+			sendMessage: function() {
+				let contactMessageArchive = this.contacts[this.activeIndex].messages;
+				this.newMessage.text = this.userInputMessage;
+				this.userInputMessage = "";
+				this.newMessage.status = "sent";
+				this.newMessage.date = "data da definire";
+				contactMessageArchive.push(this.newMessage);
 			}
 		}
 
