@@ -172,9 +172,7 @@ const app = new Vue(
 
 			deleteMessage: function (index) {
 				let contactMessageArchive = this.contacts[this.activeIndex].messages;
-				const thisMessage = this.contacts[this.activeIndex].messages[index];
-				console.log(thisMessage);
-				contactMessageArchive.splice(thisMessage, 1);
+				contactMessageArchive.splice(index, 1);
 			}
 
 		} // fine di methods
