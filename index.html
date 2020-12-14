@@ -115,11 +115,23 @@
 
           <div class="chat_field">
             <div
-            v-for="key in contacts[activeIndex].messages"
+            v-for="(key,index) in contacts[activeIndex].messages"
             class="message">
               <div :class="key.status == 'sent' ? 'sent' : 'received'">
                 <p class="message_text">{{key.text}}</p>
                 <p class="date_text">{{key.date}}</p>
+                <a
+                href="#"
+                class="dropdown_icon"
+                @click="toggleActiveClass(index)"
+                :class="key.activeClass ? 'active':''">
+                  <i class="fas fa-angle-down"></i>
+                </a>
+                <div
+                class="dropdown_content"
+                :class="key.activeClass ? 'active':''">
+
+                </div>
               </div>
             </div>
           </div>
