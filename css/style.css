@@ -34,6 +34,9 @@ header {
   padding: 10px;
   background-color: #323033;
 }
+ul {
+  list-style: none;
+}
 img {
   width: 45px;
   border-radius: 50%;
@@ -59,21 +62,6 @@ footer i:hover {
   color: #ffffff;
   transition: 0.8s;
 }
-li {
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 90px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-li:hover {
-  background-color: #323033;
-}
-li.active {
-  background-color:#323033;
-}
 h4 {
   font-size: 20px;
   font-weight: 500;
@@ -83,94 +71,6 @@ p {
 }
 input:focus {
   outline: none;
-}
-.message {
-  padding: 20px 0;
-}
-.message::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.message > .received,
-.message > .sent {
-  position: relative;
-  width: 400px;
-  padding: 20px;
-  border-radius: 10px;
-  overflow-wrap: break-word;
-}
-.received {
-  float: left;
-  background-color: #323033;
-}
-.received::before {
-  content: "";
-  position: absolute;
-  top: 20px;
-  left: -7.5px;
-  width: 15px;
-  height: 15px;
-  border-radius: 0 0 0 3px;
-  background-color: #323033;
-  transform: rotate(45deg);
-}
-.sent {
-  float: right;
-  background-color: #1e4242;
-}
-.sent::before {
-  content: "";
-  position: absolute;
-  top: 20px;
-  right: -7.5px;
-  width: 15px;
-  height: 15px;
-  border-radius: 0 3px 0 0;
-  background-color: #1e4242;
-  transform: rotate(45deg);
-}
-p.message_text {
-  padding: 10px;
-  font-weight: 500;
-}
-p.date_text {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  word-wrap: break-word;
-  font-size: 13px;
-}
-.message:hover .dropdown_icon {
-  opacity: 1;
-}
-.dropdown_icon {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  opacity: 0;
-  transition: opacity 0.3s linear;
-}
-.dropdown_icon.active {
-  transform: rotate(180deg);
-  transition: 0.2s linear;
-}
-.dropdown_content {
-  position: absolute;
-  top: 85px;
-  right: 15px;
-  width: 300px;
-  height: 100px;
-  border-radius: 5px;
-  background-color: #323033;
-  box-shadow: 0px 0px 10px 3px #000000;
-  z-index: 1;
-  display: none;
-  opacity: 0;
-}
-.dropdown_content.active {
-  display: inline-block;
-  opacity: 1;
 }
 /* /generale */
 
@@ -270,6 +170,21 @@ main::after {
   height: calc(100% - 190px);
   overflow-y: auto;
 }
+#contact_list > li {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 90px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+#contact_list > li:hover {
+  background-color: #323033;
+}
+#contact_list > li.active {
+  background-color:#323033;
+}
 #contact_list li > img {
   width: 60px;
   margin-right: 20px;
@@ -329,6 +244,101 @@ main::after {
   content: "";
   display: table;
   clear: both;
+}
+.message {
+  padding: 20px 0;
+}
+.message::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.message > .received,
+.message > .sent {
+  position: relative;
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  overflow-wrap: break-word;
+}
+.received {
+  float: left;
+  background-color: #323033;
+}
+.received::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -7.5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 0 0 0 3px;
+  background-color: #323033;
+  transform: rotate(45deg);
+}
+.sent {
+  float: right;
+  background-color: #1e4242;
+}
+.sent::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: -7.5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 0 3px 0 0;
+  background-color: #1e4242;
+  transform: rotate(45deg);
+}
+p.message_text {
+  padding: 10px;
+  font-weight: 500;
+}
+p.date_text {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  word-wrap: break-word;
+  font-size: 13px;
+}
+.message:hover .dropdown_icon {
+  opacity: 1;
+}
+.dropdown_icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  opacity: 0;
+  transition: opacity 0.3s linear;
+}
+.dropdown_icon.active {
+  transform: rotate(180deg);
+  transition: 0.2s linear;
+}
+.dropdown_content {
+  position: absolute;
+  top: 85px;
+  right: 15px;
+  width: max-content;
+  border-radius: 5px;
+  background-color: #323033;
+  box-shadow: 0px 0px 10px 3px #000000;
+  z-index: 1;
+  display: none;
+  opacity: 0;
+}
+.dropdown_content ul > li {
+  padding: 20px;
+  cursor: pointer;
+}
+.dropdown_content ul > li:hover {
+  background-color: #19161b;
+}
+
+.dropdown_content.active {
+  display: inline-block;
+  opacity: 1;
 }
 #chat_block footer {
   position: absolute;

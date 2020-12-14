@@ -152,14 +152,23 @@ const app = new Vue(
 			}, // fine funzione
 
 			toggleActiveClass: function (index) {
+				let contactMessageArchive = this.contacts[this.activeIndex].messages;
 				let target = this.contacts[this.activeIndex].messages[index];
+
+				contactMessageArchive.forEach(
+					(element) => {
+						element.activeClass = false;
+					}
+				);
 
 				if (target.activeClass == false) {
 					target.activeClass = true;
+					console.log(target.activeClass);
 				} else {
 					target.activeClass = false;
+					console.log(target.activeClass);
 				}
-			} // fine funzione
+			}
 
 		} // fine di methods
 
