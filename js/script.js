@@ -109,7 +109,7 @@ const app = new Vue(
 				);
 				this.activeIndex = index;
 				this.contacts[index].visible = true;
-			},
+			}, // fine funzione
 
 			sendMessage: function() {
 				// entro nell'array dei messaggi dell'utente in cui clicco
@@ -132,22 +132,21 @@ const app = new Vue(
 						contactMessageArchive.push(this.newReceivedMessage);
 						this.newReceivedMessage = {}; // svuoto l'oggetto del nuovo messaggio ricevuto
 					}, 1000);
-			},
+
+			}, // fine funzione
 
 			searchContact: function() {
-				// console.log(this.contacts[0].name.includes(this.userSearchInput));
 				this.contacts.forEach(
 					(element) => {
 						element.visible = false;
 						if (element.name.includes(this.userSearchInput)) {
 							element.visible = true;
 						}
-						console.log(element.visible);
 					}
 				);
-			}
+			} // fine funzione
 
-		}
+		} // fine di methods
 
 	}
 );
