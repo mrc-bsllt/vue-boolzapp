@@ -94,7 +94,12 @@ const app = new Vue(
 			],
 			activeIndex: 0,
 			userInputMessage: "",
-			newMessage: {}
+			newSendMessage: {},
+			newReceivedMessage: {
+				date: "data da definire",
+				text: "Ok!",
+				status: "received"
+			}
 		},
 		methods: {
 			addActiveClass: function (index) {
@@ -108,11 +113,15 @@ const app = new Vue(
 			},
 			sendMessage: function() {
 				let contactMessageArchive = this.contacts[this.activeIndex].messages;
-				this.newMessage.text = this.userInputMessage;
+				this.newSendMessage.text = this.userInputMessage;
 				this.userInputMessage = "";
-				this.newMessage.status = "sent";
-				this.newMessage.date = "data da definire";
-				contactMessageArchive.push(this.newMessage);
+				this.newSendMessage.status = "sent";
+				this.newSendMessage.date = "data da definire";
+				contactMessageArchive.push(this.newSendMessage);
+				setTimeout(
+					() => {
+						contactMessageArchive.push(this.newReceivedMessage);
+					}, 1000);
 			}
 		}
 
