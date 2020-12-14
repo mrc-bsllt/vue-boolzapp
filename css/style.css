@@ -100,13 +100,35 @@ input:focus {
   border-radius: 10px;
   overflow-wrap: break-word;
 }
-.message > .received {
+.received {
   float: left;
   background-color: #323033;
 }
-.message > .sent {
+.received::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -7.5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 0 0 0 3px;
+  background-color: #323033;
+  transform: rotate(45deg);
+}
+.sent {
   float: right;
   background-color: #1e4242;
+}
+.sent::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: -7.5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 0 3px 0 0;
+  background-color: #1e4242;
+  transform: rotate(45deg);
 }
 p.message_text {
   padding: 10px;
