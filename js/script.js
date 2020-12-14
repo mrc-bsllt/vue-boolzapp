@@ -102,13 +102,7 @@ const app = new Vue(
 		methods: {
 
 			addActiveClass: function (index) {
-				this.contacts.forEach(
-					(element, i) => {
-						element.visible = false;
-					}
-				);
 				this.activeIndex = index;
-				this.contacts[index].visible = true;
 			}, // fine funzione
 
 			sendMessage: function() {
