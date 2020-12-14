@@ -93,10 +93,11 @@ const app = new Vue(
 				},
 			],
 			activeIndex: 0,
+			currentDate: "",
 			userInputMessage: "",
 			newSendMessage: {},
 			newReceivedMessage: {
-				date: "data da definire",
+				date: "da definire",
 				text: "Ok!",
 				status: "received"
 			}
@@ -112,17 +113,24 @@ const app = new Vue(
 				this.contacts[index].visible = true;
 			},
 			sendMessage: function() {
+				// entro nell'array dei messaggi dell'utente in cui clicco
 				let contactMessageArchive = this.contacts[this.activeIndex].messages;
+
+				// compilo e creo tutti i campi dell'oggetto newsendMessage
 				this.newSendMessage.text = this.userInputMessage;
-				this.userInputMessage = "";
+				this.userInputMessage = "";  // cancello il campo input
 				this.newSendMessage.status = "sent";
-				this.newSendMessage.date = "data da definire";
+				this.newSendMessage.date = "da definire";
 				contactMessageArchive.push(this.newSendMessage);
+				this.newSendMessage = {};
+
+				// dopo un secondo ritorno un messaggio automatico con scritto Ok!
 				setTimeout(
 					() => {
 						contactMessageArchive.push(this.newReceivedMessage);
 					}, 1000);
 			}
+
 		}
 
 	}
