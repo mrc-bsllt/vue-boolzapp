@@ -96,13 +96,10 @@ const app = new Vue(
 			currentDate: "",
 			userInputMessage: "",
 			newSendMessage: {},
-			newReceivedMessage: {
-				date: "da definire",
-				text: "Ok!",
-				status: "received"
-			}
+			newReceivedMessage: {}
 		},
 		methods: {
+
 			addActiveClass: function (index) {
 				this.contacts.forEach(
 					(element, i) => {
@@ -112,6 +109,7 @@ const app = new Vue(
 				this.activeIndex = index;
 				this.contacts[index].visible = true;
 			},
+
 			sendMessage: function() {
 				// entro nell'array dei messaggi dell'utente in cui clicco
 				let contactMessageArchive = this.contacts[this.activeIndex].messages;
@@ -120,14 +118,18 @@ const app = new Vue(
 				this.newSendMessage.text = this.userInputMessage;
 				this.userInputMessage = "";  // cancello il campo input
 				this.newSendMessage.status = "sent";
-				this.newSendMessage.date = "da definire";
+				this.newSendMessage.date = dayjs().format('DD/MM/YYYY H:mm:ss');
 				contactMessageArchive.push(this.newSendMessage);
-				this.newSendMessage = {};
+				this.newSendMessage = {}; // svuoto il campo del newSendMessage
 
 				// dopo un secondo ritorno un messaggio automatico con scritto Ok!
 				setTimeout(
 					() => {
+						this.newReceivedMessage.text = "Ok!",
+						this.newReceivedMessage.date = dayjs().format('DD/MM/YYYY H:mm:ss');
+						this.newReceivedMessage.status = "received",
 						contactMessageArchive.push(this.newReceivedMessage);
+						this.newReceivedMessage = {}; // svuoto l'oggetto del nuovo messaggio ricevuto
 					}, 1000);
 			}
 
