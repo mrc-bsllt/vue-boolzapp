@@ -135,7 +135,16 @@ const app = new Vue(
 			},
 
 			searchContact: function() {
-				console.log(this.userSearchInput);
+				// console.log(this.contacts[0].name.includes(this.userSearchInput));
+				this.contacts.forEach(
+					(element) => {
+						element.visible = false;
+						if (element.name.includes(this.userSearchInput)) {
+							element.visible = true;
+						}
+						console.log(element.visible);
+					}
+				);
 			}
 
 		}

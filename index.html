@@ -61,9 +61,13 @@
           <div class="contact">
 
             <ul id="contact_list">
-              <li
-              v-for= "(contact, index) in contacts" @click="addActiveClass(index)"
-              :class="activeIndex == index ? 'active' : ''">
+
+              <template
+              v-for= "(contact, index) in contacts">
+                <li
+                v-if="contact.visible = true"
+                 @click="addActiveClass(index)"
+                :class="activeIndex == index ? 'active' : ''">
                 <img :src="contact.avatar" :alt="contact.altAvatar">
                 <div class="contact_text">
                   <h4>{{contact.name}}</h4>
@@ -75,6 +79,8 @@
                   {{contact.messages[contact.messages.length-1].date}}
                 </p>
               </li>
+              </template>
+
             </ul>
 
           </div>
