@@ -256,7 +256,7 @@ main::after {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 50%;
+  width: 70%;
 }
 #chat_block header > .contact_info > img {
   margin-right: 20px;
@@ -265,7 +265,7 @@ main::after {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 50%;
+  width: 30%;
 }
 .chat_field {
   height: calc(100% - 120px);

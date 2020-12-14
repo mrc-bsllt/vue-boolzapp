@@ -31,7 +31,7 @@ const app = new Vue(
 					name: 'Billy',
 					avatar: 'img/avatar_2.jpg',
 					altAvatar: "avatar 2",
-					visible: false,
+					visible: true,
 					messages: [
 						{
 							date: '20/03/2020 16:30:00',
@@ -54,7 +54,7 @@ const app = new Vue(
 					name: 'Chuck',
 					avatar: 'img/avatar_3.jpg',
 					altAvatar: "avatar 3",
-					visible: false,
+					visible: true,
 					messages: [
 						{
 							date: '28/03/2020 10:10:40',
@@ -77,7 +77,7 @@ const app = new Vue(
 					name: 'Emily',
 					avatar: 'img/avatar_4.jpg',
 					altAvatar: "avatar 4",
-					visible: false,
+					visible: true,
 					messages: [
 						{
 							date: '10/01/2020 15:30:55',
@@ -94,7 +94,8 @@ const app = new Vue(
 			],
 			activeIndex: 0,
 			currentDate: "",
-			userInputMessage: "",
+			userSearchInput: "",
+			userMessageInput: "",
 			newSendMessage: {},
 			newReceivedMessage: {}
 		},
@@ -115,8 +116,8 @@ const app = new Vue(
 				let contactMessageArchive = this.contacts[this.activeIndex].messages;
 
 				// compilo e creo tutti i campi dell'oggetto newsendMessage
-				this.newSendMessage.text = this.userInputMessage;
-				this.userInputMessage = "";  // cancello il campo input
+				this.newSendMessage.text = this.userMessageInput;
+				this.userMessageInput = "";  // cancello il campo input
 				this.newSendMessage.status = "sent";
 				this.newSendMessage.date = dayjs().format('DD/MM/YYYY H:mm:ss');
 				contactMessageArchive.push(this.newSendMessage);
@@ -131,6 +132,10 @@ const app = new Vue(
 						contactMessageArchive.push(this.newReceivedMessage);
 						this.newReceivedMessage = {}; // svuoto l'oggetto del nuovo messaggio ricevuto
 					}, 1000);
+			},
+
+			searchContact: function() {
+				console.log(this.userSearchInput);
 			}
 
 		}

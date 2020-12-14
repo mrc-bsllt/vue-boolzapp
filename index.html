@@ -50,7 +50,12 @@
             <button type="button" name="button">
               <i class="fas fa-search"></i>
             </button>
-            <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+            <input type="text"
+            name=""
+            value=""
+            v-model="userSearchInput"
+            v-on:keyDown.enter="searchContact()"
+            placeholder="Cerca o inizia una nuova chat">
           </div>
 
           <div class="contact">
@@ -79,8 +84,8 @@
 
           <header>
 
-            <template v-for="contact in contacts">
-              <div v-if="contact.visible" class="contact_info">
+            <template v-for="(contact,index) in contacts">
+              <div v-if="activeIndex == index" class="contact_info">
                 <img :src="contact.avatar" :alt="contact.altAvatar">
                 <div class="contact_info_text">
                   <h4>{{contact.name}}</h4>
@@ -124,7 +129,7 @@
               type="text"
               name=""
               value=""
-              v-model="userInputMessage"
+              v-model="userMessageInput"
               v-on:keydown.enter="sendMessage()"
               placeholder="Scrivi un messaggio">
             </div>
