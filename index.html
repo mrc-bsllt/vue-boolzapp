@@ -132,7 +132,10 @@
                 :class="key.activeClass ? 'active':''">
                   <ul class="dropdown_list">
                     <li><a href="#">Message info</a></li>
-                    <li><a href="#">Delete message</a></li>
+                    <li
+                    @click="deleteMessage(index)">
+                      <a href="#">Delete message</a>
+                    </li>
                   </ul>
                 </div>
               </div>

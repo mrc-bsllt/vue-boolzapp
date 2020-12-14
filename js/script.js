@@ -152,6 +152,7 @@ const app = new Vue(
 			}, // fine funzione
 
 			toggleActiveClass: function (index) {
+
 				let contactMessageArchive = this.contacts[this.activeIndex].messages;
 				let target = this.contacts[this.activeIndex].messages[index];
 
@@ -163,11 +164,17 @@ const app = new Vue(
 
 				if (target.activeClass == false) {
 					target.activeClass = true;
-					console.log(target.activeClass);
 				} else {
 					target.activeClass = false;
-					console.log(target.activeClass);
 				}
+
+			}, // fine funzione
+
+			deleteMessage: function (index) {
+				let contactMessageArchive = this.contacts[this.activeIndex].messages;
+				const thisMessage = this.contacts[this.activeIndex].messages[index];
+				console.log(thisMessage);
+				contactMessageArchive.splice(thisMessage, 1);
 			}
 
 		} // fine di methods
