@@ -116,33 +116,25 @@
           <div class="chat_field">
 
             <template v-if="contacts[activeIndex].messages.length != 0">
-              <div
-              v-for="(key,index) in contacts[activeIndex].messages"
-              class="message">
-              <div :class="key.status == 'sent' ? 'sent' : 'received'">
-                <p class="message_text">{{key.text}}</p>
-                <p class="date_text">{{key.date}}</p>
-                <a
-                href="#"
-                class="dropdown_icon"
-                @click="toggleActiveClass(index)"
-                :class="key.activeClass ? 'active':''">
-                <i class="fas fa-angle-down"></i>
-              </a>
-              <div
-              class="dropdown_content"
-              :class="key.activeClass ? 'active':''">
-              <ul class="dropdown_list">
-                <li><a href="#">Message info</a></li>
-                <li
-                @click="deleteMessage(index)">
-                <a href="#">Delete message</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+              <div v-for="(key,index) in contacts[activeIndex].messages" class="message">
 
+                <div :class="key.status == 'sent' ? 'sent' : 'received'">
+                  <p class="message_text">{{key.text}}</p>
+                  <p class="date_text">{{key.date}}</p>
+                  <a href="#" class="dropdown_icon" @click="toggleActiveClass(index)" :class="key.activeClass ? 'active':''">
+                    <i class="fas fa-angle-down"></i>
+                  </a>
+                  <div class="dropdown_content" :class="key.activeClass ? 'active':''">
+                    <ul class="dropdown_list">
+                      <li><a href="#">Message info</a></li>
+                      <li @click="deleteMessage(index)">
+                        <a href="#">Delete message</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
             </template>
 
           </div>
