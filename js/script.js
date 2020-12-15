@@ -163,18 +163,20 @@ const app = new Vue(
 				let contactMessageArchive = this.contacts[this.activeIndex].messages;
 				let target = this.contacts[this.activeIndex].messages[index];
 
-				// contactMessageArchive.forEach(
-				// 	(element) => {
-				// 		element.activeClass = false;
-				// 	}
-				// );
+				contactMessageArchive.forEach(
+					(element) => {
+						if (target == element) {
+						} else {
+							element.activeClass = false;
+						}
+					}
+				);
 
 				if (target.activeClass == false) {
 					target.activeClass = true;
 				} else {
 					target.activeClass = false;
 				}
-				console.log(index, target.activeClass);
 			}, // fine funzione
 
 			deleteMessage: function (index) {
