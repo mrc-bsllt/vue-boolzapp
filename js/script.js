@@ -165,8 +165,7 @@ const app = new Vue(
 
 				contactMessageArchive.forEach(
 					(element) => {
-						if (target == element) {
-						} else {
+						if (target != element) {
 							element.activeClass = false;
 						}
 					}
