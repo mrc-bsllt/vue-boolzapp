@@ -66,7 +66,7 @@
               v-for= "(contact, index) in contacts">
                 <li
                 v-if="contact.visible"
-                 @click="addActiveClass(index)"
+                @click="contactSelector(index)"
                 :class="activeIndex == index ? 'active' : ''">
                 <img :src="contact.avatar" :alt="contact.altAvatar">
                 <div class="contact_text">

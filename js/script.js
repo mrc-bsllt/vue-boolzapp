@@ -107,12 +107,16 @@ const app = new Vue(
 			currentDate: "",
 			userSearchInput: "",
 			userMessageInput: "",
-			newSendMessage: {},
-			newReceivedMessage: {},
+			newSendMessage: {
+				activeClass: false
+			},
+			newReceivedMessage: {
+				activeClass: false
+			},
 		},
 		methods: {
 
-			addActiveClass: function (index) {
+			contactSelector: function (index) {
 				this.activeIndex = index;
 			}, // fine funzione
 
@@ -125,6 +129,7 @@ const app = new Vue(
 				this.userMessageInput = "";  // cancello il campo input
 				this.newSendMessage.status = "sent";
 				this.newSendMessage.date = dayjs().format('DD/MM/YYYY H:mm:ss');
+				// this.newSendMessage.activeClass = false;
 				contactMessageArchive.push(this.newSendMessage);
 				this.newSendMessage = {}; // svuoto il campo del newSendMessage
 
@@ -133,10 +138,12 @@ const app = new Vue(
 					() => {
 						this.newReceivedMessage.text = "Ok!",
 						this.newReceivedMessage.date = dayjs().format('DD/MM/YYYY H:mm:ss');
-						this.newReceivedMessage.status = "received",
+						this.newReceivedMessage.status = "received";
+						// this.newReceivedMessage.activeClass = false;
 						contactMessageArchive.push(this.newReceivedMessage);
 						this.newReceivedMessage = {}; // svuoto l'oggetto del nuovo messaggio ricevuto
 					}, 1000);
+					// console.log(contactMessageArchive);
 
 			}, // fine funzione
 
@@ -156,18 +163,18 @@ const app = new Vue(
 				let contactMessageArchive = this.contacts[this.activeIndex].messages;
 				let target = this.contacts[this.activeIndex].messages[index];
 
-				contactMessageArchive.forEach(
-					(element) => {
-						element.activeClass = false;
-					}
-				);
+				// contactMessageArchive.forEach(
+				// 	(element) => {
+				// 		element.activeClass = false;
+				// 	}
+				// );
 
 				if (target.activeClass == false) {
 					target.activeClass = true;
 				} else {
 					target.activeClass = false;
 				}
-
+				console.log(index, target.activeClass);
 			}, // fine funzione
 
 			deleteMessage: function (index) {
