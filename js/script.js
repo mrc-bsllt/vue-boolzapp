@@ -145,12 +145,13 @@ const app = new Vue(
 			}, // fine funzione
 
 			searchContact: function() {
+
 				this.contacts.forEach(
 					(element) => {
 						element.visible = false;
-						if (element.name.includes(this.userSearchInput)) {
+						if (element.name.toLowerCase().includes(this.userSearchInput.toLowerCase())) {
 							element.visible = true;
-						}
+						};
 					}
 				);
 			}, // fine funzione
@@ -178,7 +179,7 @@ const app = new Vue(
 			deleteMessage: function (index) {
 				let contactMessageArchive = this.contacts[this.activeIndex].messages;
 				contactMessageArchive.splice(index, 1);
-			}
+			} // fine funzione
 
 		} // fine di methods
 
